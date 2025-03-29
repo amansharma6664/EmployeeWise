@@ -8,8 +8,8 @@ const UserList = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetchUsers().then(setUsers);
-  }, [fetchUsers]); 
+    fetchUsers();
+  }, [fetchUsers]);
 
   const fetchUsers = async () => {
     try {
