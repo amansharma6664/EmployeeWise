@@ -3,13 +3,9 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 const UserList = () => {
-  const [users, setUsers] = useState([]);  // ✅ Define users state
+  const [users, setUsers] = useState([]);  
   const [page, setPage] = useState(1);
   const navigate = useNavigate();
-
-  useEffect(() => {
-    fetchUsers();
-  }, [fetchUsers]);
 
   const fetchUsers = async () => {
     try {
@@ -19,6 +15,10 @@ const UserList = () => {
       console.error("Error fetching users:", error);
     }
   };
+
+  useEffect(() => {
+    fetchUsers();
+  }, [fetchUsers]);
 
   const handleDelete = async (id) => {
     try {
