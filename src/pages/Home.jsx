@@ -5,7 +5,6 @@ const Home = () => {
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    // Clear authentication state (you might need to manage this globally)
     navigate("/");
   };
 

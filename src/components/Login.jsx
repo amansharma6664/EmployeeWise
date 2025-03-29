@@ -9,10 +9,9 @@ const Login = ({ onLogin }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Simulated authentication (replace with real authentication logic)
     if (email === "eve.holt@reqres.in" && password === "cityslicka") {
       onLogin();
-      navigate("/home"); // Redirect to Home page after login
+      navigate("/home"); 
     } else {
       alert("Invalid email or password!");
     }

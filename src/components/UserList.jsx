@@ -8,8 +8,8 @@ const UserList = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetchUsers();
-  }, [page]);
+    fetchUsers().then(setUsers);
+  }, [fetchUsers]); 
 
   const fetchUsers = async () => {
     try {
@@ -20,11 +20,10 @@ const UserList = () => {
     }
   };
 
-  // ✅ Fix: Define handleDelete properly
   const handleDelete = async (id) => {
     try {
       await axios.delete(`https://reqres.in/api/users/${id}`);
-      setUsers(users.filter((user) => user.id !== id));  // ✅ Update users list
+      setUsers(users.filter((user) => user.id !== id)); 
       alert("User deleted successfully");
     } catch (error) {
       alert("Delete failed");
